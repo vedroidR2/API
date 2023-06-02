@@ -1,0 +1,43 @@
+{	
+	"first_name": "Igor",
+	"second_name": "Gorin",
+	"last_name": "Vitalievich",
+	"age": 30,
+	"gender": "M",
+	"phonenumber": ["375333016985"],
+	"email": "gorin2020@gmail.com",
+	"telegram" :"https://t.me/v3dr0id",
+	"adress": {
+		"city": "Minsk",
+		"street": "Svetlaya"
+		},
+	"marridge": "True",
+	"desiredposition": [
+		{"name":"QA Engineer",
+		"specializacion": "Manual Tester"}],
+	"job": [
+		{"company": "Coswik",
+		 "position": "machine operator",
+		 "responsibilities": ["Splice Line Operator", "Checking the equipment", "Detection of machine breakdowns",
+							"Hardware Setup", "Quality control of the input and output product, in accordance with the requirements",
+							"Training of new employees"]},
+		{"company": "IT-Academy BelHard",
+		"position": "Intern",
+		"responsibilities": ["requirements testing", "Preparation of test cases for scenarios", 
+							"Find bugs in functionality", "Issue bug reports based on written test cases",
+							"Launch the project on a local machine", "Write instructions for other testers (to launch the project)",
+							"Using the Pycharm tool", "Testing the API using Postman. Used the methods: GET, POST, DELETE, PUT, PATCH"]}
+							],
+	"highereducation": [
+		{"name": "Belarusian State Economic University", 
+		"faculty":	"finance and banking",
+		"specializacion": "Finance and credit, economist"}],
+	"additionaleducation": [
+		{"name": "IT-Academy BelHard",
+		"specializacion": "Software Testing Engineer"}],
+	"keyskills": ["Beta testing", "Testing", "User Interface Testing", "Black box testing",
+				"Test case", "A/B tests", "Unit testing", "requirements testing", "Teamwork", 
+				"Competent speech", "Postman", "Pycharm", "Adding bugs to the bug tracking system", 
+				"Communication with the development team", "Development of tests, questionnaires"],
+	"hobbies":["PC-gaming", "cycling", "outdoor recreation", "setup and software maintenance (pc, laptops)"]
+}
