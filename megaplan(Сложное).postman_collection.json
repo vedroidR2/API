@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "api/v3/auth/access_token/1",
+			"name": "1.api/v3/auth/access_token/1",
 			"event": [
 				{
 					"listen": "test",
@@ -75,7 +75,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task",
+			"name": "2./api/v3/task",
 			"event": [
 				{
 					"listen": "test",
@@ -88,20 +88,36 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find TaskName\", function () {\r",
+							"pm.test(\"Find taskname value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.name).to.eql(\"Катать вату\");\r",
 							"});\r",
+							"pm.test(\"Find taskname\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.name).to.eql(jsonData.data.name);\r",
+							"});\r",
 							"\r",
-							"pm.test(\"Find responsible\", function () {\r",
+							"pm.test(\"Find responsible value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.responsible.name).to.eql(\"Testing2 Exploratory\");\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find TaskStatus\", function () {\r",
+							"pm.test(\"Find responsible\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.responsible).to.eql(jsonData.data.responsible);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Find taskstatus value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"assigned\");\r",
-							"});"
+							"});\r",
+							"\r",
+							"pm.test(\"Find taskstatus\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.status).to.eql(jsonData.data.status);\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -149,7 +165,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task/{id}",
+			"name": "3./api/v3/task/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -159,9 +175,24 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find statment\", function () {\r",
+							"pm.test(\"Find statment value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.statement).to.eql(\"<p>описание задачи</p>\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Find statment\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.statement).to.eql(jsonData.data.statement);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Find textstatment value\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.textStatement).to.eql(\"описание задачи\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Find text statment\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.textStatement).to.eql(jsonData.data.textStatement);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -211,7 +242,7 @@
 			"response": []
 		},
 		{
-			"name": "api/v3/auth/access_token/2",
+			"name": "4.api/v3/auth/access_token/2",
 			"event": [
 				{
 					"listen": "test",
@@ -279,7 +310,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task/{id}/doAction/accept",
+			"name": "5./api/v3/task/{id}/doAction/accept",
 			"event": [
 				{
 					"listen": "test",
@@ -289,10 +320,15 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find taskstatus\", function () {\r",
+							"pm.test(\"Find taskstatus value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"accepted\");\r",
-							"});"
+							"});\r",
+							"pm.test(\"Find taskstatus\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.status).to.eql(jsonData.data.status);\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -348,7 +384,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task/{id}/doAction/done",
+			"name": "6./api/v3/task/{id}/doAction/done",
 			"event": [
 				{
 					"listen": "test",
@@ -358,9 +394,13 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find taskstatus\", function () {\r",
+							"pm.test(\"Find taskstatus value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"done\");\r",
+							"});\r",
+							"pm.test(\"Find taskstatus\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.status).to.eql(jsonData.data.status);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -417,7 +457,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task/{{id}}/comments",
+			"name": "7./api/v3/task/{{id}}/comments",
 			"event": [
 				{
 					"listen": "test",
@@ -427,10 +467,15 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find comment\", function () {\r",
+							"pm.test(\"Find comment value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.content).to.eql(\"<p>Это комментарий</p>\");\r",
-							"});"
+							"});\r",
+							"pm.test(\"Find comment\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.content).to.eql(jsonData.data.content);\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -485,7 +530,7 @@
 			"response": []
 		},
 		{
-			"name": "api/v3/auth/access_token/1/again",
+			"name": "8./api/v3/auth/access_token/1/again",
 			"event": [
 				{
 					"listen": "test",
@@ -553,7 +598,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task/{id}/doAction/accept",
+			"name": "9./api/v3/task/{id}/doAction/accept",
 			"event": [
 				{
 					"listen": "test",
@@ -563,9 +608,13 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Find taskStatus\", function () {\r",
+							"pm.test(\"Find taskstatus value\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"completed\");\r",
+							"});\r",
+							"pm.test(\"Find taskStatus\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.status).to.eql(jsonData.data.status);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -621,7 +670,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/v3/task/{id}",
+			"name": "10./api/v3/task/{id}",
 			"event": [
 				{
 					"listen": "test",
