@@ -93,10 +93,9 @@
 							"    pm.expect(jsonData.data.name).to.eql(\"Катать вату\");\r",
 							"});\r",
 							"\r",
-							"\r",
 							"pm.test(\"Find responsible\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.data.responsible.name).to.eql(\"Testing2 Exploratory\");\r",
+							"    pm.expect(jsonData.data.responsible.id).to.eql(\"1000105\");\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Find taskstatus\", function () {\r",
@@ -656,6 +655,66 @@
 			],
 			"request": {
 				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/task/{{taskID}}",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"task",
+						"{{taskID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10./api/v3/task/{id} Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"var id = pm.collectionVariables.get(\"taskID\");\r",
+							"\r",
+							"pm.test(\"Found message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.meta.errors[0].message).to.eql(\"Not Found Task with id = \" + id);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
